@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techno-World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .menu {
+            width: 20%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            display: none; /* Hide menu initially */
+        }
+
+        .menu-item {
+            cursor: pointer;
+            padding: 15px;
+            margin: 10px 0;
+            background: #0073e6;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .menu-item:hover {
+            background: #005bb5;
+        }
+
+        .content {
+            width: 80%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .details {
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .welcome {
+            font-size: 40px;
+            font-weight: bold;
+            animation: fadeOut 8s forwards; /* Fade out over 8 seconds */
+            text-align: center;
+            margin-top: 20%;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+
+        .typed-text {
+            white-space: pre-wrap;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="menu-item" onclick="showDetails('technographics')">Technographics Data</div>
+            <div class="menu-item" onclick="showDetails('msp')">MSP Database</div>
+            <div class="menu-item" onclick="showDetails('technology')">Technology Append</div>
+            <div class="menu-item" onclick="showDetails('industry')">Industry Database</div>
+            <div class="menu-item" onclick="showDetails('title')">Title Based Database</div>
+            <div class="menu-item" onclick="showDetails('email')">Email Campaign Service</div>
+            <div class="menu-item" onclick="showDetails('data')">Data Appending Discovery</div>
+        </div>
+        <div class="content">
+            <div class="welcome">Welcome to the Techno-world<br><small>Right place to target your competitor</small></div>
+            <div id="details" class="details">
+                <div id="typed-text" class="typed-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hide welcome message and show menu after 8 seconds
+        setTimeout(() => {
+            document.querySelector('.welcome').style.display = 'none';
+            document.querySelector('.menu').style.display = 'block';
+        }, 8000); // 8000 milliseconds = 8 seconds
+
+        // Function to show details
+        function showDetails(service) {
+            const details = {
+                'technographics': "Collects, updates, refreshes, and verifies the Technographics data in-house. We have a dedicated team of research analysts who work in tandem with the data quality and verification team to ensure the Technographics information is accurate and up-to-date.\n\nWe collect the Technographics data from 17+ different sources, of what we call as primary or suspect data of a particular company using a specific technology. This data is then vetted into actionable and verified information by our QA and Verification team. Each of these companies are touched and verified through phone, email surveys, or social verification to confirm the technology usage, and this is an ongoing and periodic process. This information on technology usage is updated every 25 days.",
+                'msp': "Identifying the right channel partner can be cumbersome and time-consuming at the same time. You want a partner who has the know-how or expertise of your core specializations. Not just some random IT service provider. The right partner mix is very crucial in getting the channel sales targets met. We have categorized the MSPs, Channel Partners, and Resellers in more than 100 categories to help you get the information of the right channel partner best suited for your technology specializations. We don’t only contact the database for potential channel partners but also specify the industries these partners are serving, what technologies they are already partnered with, what regions they serve, and many other attributes.",
+                'technology': "Tech companies have CRM loaded with the list of prospect companies that lack the information on the technology stack of those companies. Their sales reps often ask these prospects about what technologies are installed in the organization. We empower the tech companies with the intelligence on the technology stack of the companies. Not only the technology usage but also the current and updated contact information of the decision-makers. This increases the value and marketing/sales effectiveness of these companies. Just send us the list of websites or the company names sitting in your dead prospect data, and we will make it alive and actionable by adding the Tech Stack (of the relevant technology categories) that make sense to your pitching and positioning.",
+                'industry': "Do you sell to only a specific Industry vertical or segment?\n\nWe have you covered with our in-depth and comprehensive reach of all industries and sub-industries. Industry-wise targeting can aid you to foster business communications with industries that can serve as your primary clients. Our Account Managers will work with you to identify the niche industries you target, whether by Industry keywords, SIC Codes, or even NAICS codes. You can slice any specific database by the industry verticals.\n\nHere is the complete list of Major Industries and Sub-Industries within those:\n- Software and IT\n- Manufacturing\n- Retail\n- Healthcare and Pharma\n- Hospitality\n- Business Services\n- Transportation\n- Consumer Services\n- Finance, Banking, and Insurance\n- Media and Internet\n- Organizations\n- Energy and Utilities\n- Telecommunications\n- Government\n- Education\n- Real Estate and Construction\n- And More.",
+                'title': "We cover all departments, levels, and positions within an organization. Most of the services are best suited for a target set of specific job personas. Our Account Managers will work with you to slice your requirement by specific job titles that you focus on. On top of the widely known departments and levels, we can also provide the information on specific “keyword” based job titles. From the universe of over 102M B2B contacts globally, you can specify your target personas that fit into your sweet spot.\n\nBelow are some examples out of thousands of job titles available with us:\n- Information Technology\n- Finance\n- Human Resources\n- Engineering\n- Legal\n- Marketing\n- Operations\n- Sales",
+                'email': "If done right, email marketing has the potential to inflate your revenue exponentially. It allows you to maximize the reach of valuable content. Whether you are looking to run a lead generation program, call for attendees for your webinar, or do a market awareness campaign, your content, timing, ISP, subject, and CTA play a vital role in ensuring the overall campaign effectiveness and greater ROI.\n\nIf you do not have the time and resources to run your own campaign on the targeted audience you acquire from us, you can just rent the Database, and we will help you send your content with a proprietary email campaign platform.\n\nThis ensures:\n- Higher Deliverability\n- Higher Open Rates\n- Greater Click-throughs\n- More subscribers and responses\n- Overall a great Marketing ROI\n\nWe will send you the complete summary of your campaign. All the metrics will be shared on a real-time basis. Our best-in-class email marketing experts will suggest the best subject lines, template modifications, alignment of images, fonts, and color schema. To ensure a higher ROI, our team will run the whole list through our proprietary email verification tool before taking the campaign live.\n\nAll we need from you:\n- Identify your target criteria\n- Work with our Account Manager for your total count\n- Date and time of campaign\n- Subject line preferences\n- Any preferred content/template\n- CTA/Landing Page",
+                'data': "Data Appending and Data Discovery helps IT companies refresh their account lists. MHAs, also called Must Have Accounts, are the target list of accounts every IT company formulates and assigns to their sales and marketing teams to penetrate and target for their products and services. Many times, this list of MHAs is obsolete. So, what makes it obsolete?\n\n- Companies in the Account List which have been acquired\n- Companies that have gone out of business\n- Companies who recently had a name change or a merger\n- Accounts list with missing contact information\n- Contact information is not refreshed and is old\n- Incorrect emails, phone numbers\n- No information about the tech stack of these companies\n- Missing job titles, revenue estimates, and address details\n- Not segmented by industry, verticals\n\nIt makes this Target Accounts list impossible for a Sales or a Marketing Executive to penetrate. We can make this actionable with the current and refreshed information on:\n- Adding Missing information about companies\n- Adding and appending missing or incorrect contact details\n- Technology Append (Clickable to Technology Append Page) for the MHAs\n- Appending the new people within the target personas from these companies\n- Appending the current Revenue, Employee size, and industry verticals"
+            };
+
+            // Display the full text immediately
+            document.getElementById('typed-text').textContent = details[service];
+            document.getElementById('details').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
